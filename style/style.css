@@ -1,0 +1,193 @@
+* {
+    box-sizing: border-box
+}
+
+:root {
+    --light: whitesmoke;
+    --dark: #8f0e82;
+    --pink-light: #fcc0f6; 
+    --highlight: #76c2e8;
+    --highlight-dark: #218bc0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Asap', sans-serif;
+    background: var(--highlight);
+}
+
+.header {
+    background-color: var(--light);
+    padding: 2em;
+    width: 100%;
+    display: flex;
+}
+
+.post-container {
+    padding: 1em 2em;
+}
+
+.post,
+button,
+img {
+    -webkit-box-shadow: 2px 2px 4px 0px var(--highlight-dark); 
+    box-shadow: 2px 2px 4px 0px var(--highlight-dark);
+    border-radius: 5px;
+}
+
+.post {
+    background: var(--light);
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 1fr minmax(50px, 400px);
+    min-width: 400px;
+    max-width: 700px;
+    margin: 2em auto;
+    color: var(--dark)
+}
+
+.content {
+    display: grid;
+    grid-template-rows: 20px 1fr;
+    padding: 0 1em 0 0;
+    color: var(--highlight-dark)
+}
+
+img {
+    width: 100%;
+    max-height: 300px;
+}
+
+h1 {
+    color: var(--highlight-dark);
+    margin: 0;
+    font-size: 3rem;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+    border: none;
+    padding: 0.6em 2em;
+    font-weight: 700;
+    justify-self: start;
+    background-color: var(--highlight-dark);
+    color: var(--light)
+}
+
+.toggle {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    margin-left: auto;
+}
+
+label {
+    width: 50px;
+    height: 30px;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    margin: 1em;
+    background-color: var(--highlight);
+}
+
+label::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    top: 2px;
+    left: 22px;
+    transition: .5s;
+    background-color: var(--light);
+}
+
+.toggle:checked + label {
+    transform: translate(-18px);
+    background-color: var(--dark);
+}
+
+.toggle:checked + label::after {
+    transform: translate(-18px);
+    background-color: var(--light);
+}
+
+
+
+.dark,
+.dark .toggle::after {
+    background-color: var(--dark);
+    color: var(--light);
+    transition: 3s;
+}
+
+.dark header h1 {
+    color: var(--dark);
+    transition: 3s;
+}
+
+.dark header label {
+    color: var(--dark);
+}
+
+.dark div > div > div > h2 {
+    color: var(--dark);
+    transition: 3s;
+}
+
+.dark div > div > div > p {
+    color: var(--dark);
+    transition: 3s;
+}
+
+.dark header  {
+    background-color: var(--pink-light);
+    transition: 3s;
+}
+
+.dark button {
+    background-color: var(--light);
+    color: var(--dark);
+    box-shadow: 2px 2px 4px 0px var(--dark);
+    transition: 3s;
+}
+
+.dark div > div {
+    -webkit-box-shadow: 2px 2px 4px 0px var(--light); 
+    box-shadow: 2px 2px 4px 0px var(--light);
+    transition: 3s;
+}
+
+.dark img {
+    -webkit-box-shadow: 2px 2px 4px 0px var(--dark); 
+    box-shadow: 2px 2px 4px 0px var(--dark);
+    transition: 3s;
+}
+
+.dark footer {
+    background-color: var(--pink-light);
+    color: var(--dark);
+    transition: 3s;
+}
+
+footer {
+    background-color: var(--light);
+    padding: 0.1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--highlight-dark)
+}
+
